@@ -1,11 +1,12 @@
-
+import React from "react";
 import './App.css';
-import Hook from "./componants/hooks";
+
+import Board from "./componants/Board/Board";
 
 function App() {
   return (
     <div className="App">
-    <Hook/>
+      <Board/>
     </div>
   );
 }
