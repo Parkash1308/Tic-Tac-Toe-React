@@ -18,4 +18,4 @@ export default function CalculateWinner(squares){
         }
     }
     return null;
-}
+}// This function check  each nested array i.e [0,1,2] . if it found same symbol then return winner

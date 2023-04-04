@@ -6,7 +6,7 @@ export default function Board (){
     const [isTrue  , setState]=useState(true);
     function handleClick(i){
         if(square[i]||CalculateWinner(square)){
-            return;
+            return;// if once square is filled then user cant overwrite and also return if game compete
         }
         if(isTrue){
             square[i]="X";
@@ -15,16 +15,18 @@ export default function Board (){
         }
 
         const  newConst=square.slice();
-        setState(!isTrue);
-        setSquare(newConst);
+        setState(!isTrue);// it reset the boolean value
+        setSquare(newConst);// it update  each index of square
 
     }// useState which store the userInteraction
+
     const winner =CalculateWinner(square);
     let status;
     if (winner) {
         status = 'Wisnner: ' + winner;
     } else {
-        status = 'Next player: ' + (isTrue ? 'X' : 'O');
+        status = 'Next player: ' + (isTrue ? 'X' : 'O');// it check if who is the next player
+        //if value of isTrue is "true then X will be next player" else "0"
     }
 
 
@@ -70,4 +72,4 @@ export default function Board (){
         }
         return null;
     }
-}
+}// This function check  each nested array i.e [0,1,2] . if it found same symbol then return winner
